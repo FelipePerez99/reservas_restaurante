@@ -1,4 +1,4 @@
-package com.app.reservasR.domain.entity.dto;
+package com.app.reservasR.domain.dto;
 
 import com.app.reservasR.application.lasting.ERole;
 import com.fasterxml.jackson.annotation.JsonInclude;
