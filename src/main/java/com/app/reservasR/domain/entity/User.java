@@ -2,6 +2,7 @@ package com.app.reservasR.domain.entity;
 
 import com.app.reservasR.application.lasting.ERole;
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Getter
