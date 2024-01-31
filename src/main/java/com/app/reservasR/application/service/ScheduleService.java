@@ -3,15 +3,15 @@ package com.app.reservasR.application.service;
 import com.app.reservasR.application.Exception.EntityNotFoundException;
 import com.app.reservasR.application.lasting.EMessage;
 import com.app.reservasR.domain.dto.ScheduleDto;
-import com.app.reservasR.domain.dto.UserDto;
 import com.app.reservasR.domain.entity.Schedule;
-import com.app.reservasR.domain.entity.User;
 import com.app.reservasR.domain.repository.ScheduleRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public record ScheduleService(ScheduleRepository scheduleRepository) {
     public void createSchedule(ScheduleDto scheduleDto){
         Schedule schedule = Schedule.builder().startTime(scheduleDto.startTime())
