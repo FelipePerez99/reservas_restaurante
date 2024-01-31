@@ -27,8 +27,20 @@ public record DiningTableController(DiningTableService diningTableService) {
     }
 
     @GetMapping
-    public ResponseEntity<?> allUsers() throws EntityNotFoundException{
+    public ResponseEntity<?> allDiningTable(){
         List<DiningTableDto> diningTables = diningTableService.allDiningTable();
         return new ResponseEntity<>(diningTables, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateDiningTable(@PathVariable Integer id, @RequestBody DiningTableDto diningTableDto) throws EntityNotFoundException{
+        DiningTableDto updateDiningTable = diningTableService.updateDiningTable(id, diningTableDto);
+        return new ResponseEntity<>(updateDiningTable, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteDiningTable(@PathVariable Integer id) throws EntityNotFoundException{
+        diningTableService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
