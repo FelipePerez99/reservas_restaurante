@@ -2,9 +2,8 @@ package com.app.reservasR.application.Controller;
 
 import com.app.reservasR.application.Exception.EntityNotFoundException;
 import com.app.reservasR.application.service.ScheduleService;
-import com.app.reservasR.domain.dto.DiningTableDto;
 import com.app.reservasR.domain.dto.ScheduleDto;
-import com.app.reservasR.domain.dto.UserDto;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
