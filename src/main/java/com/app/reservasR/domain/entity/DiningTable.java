@@ -17,4 +17,8 @@ public class DiningTable {
     private Integer id;
     private int capacity;
 
+    @ManyToOne
+    private Restaurant restaurant;
+
+
 }
