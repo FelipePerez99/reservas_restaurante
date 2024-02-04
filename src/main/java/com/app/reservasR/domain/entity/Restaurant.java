@@ -20,9 +20,9 @@ public class Restaurant {
     private String name;
     private String address;
 
-    @OneToMany
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DiningTable> diningTableList;
 
-    @OneToMany
+    @OneToMany(mappedBy = "restaurant",  cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Schedule> schedules;
 }
