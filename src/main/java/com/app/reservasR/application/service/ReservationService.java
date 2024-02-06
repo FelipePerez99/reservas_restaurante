@@ -45,13 +45,6 @@ public record ReservationService(ReservationRepository reservationRepository, Us
         reservationRepository.save(reservation);
     }
 
-    public List<Reservation> findReservationByUser(Integer userId) throws EntityNotFoundException {
-        Optional<User>  user = userRepository.findById(userId);
-
-        User useer = user.orElseThrow(() -> new EntityNotFoundException(EMessage.DATA_NOT_FOUND));
-
-        return reservationRepository.findByUserId(useer.getId());
-    }
 
     public void cancelReservationById(Integer id)throws EntityNotFoundException {
         Optional<Reservation> restaurant = reservationRepository.findById(id);

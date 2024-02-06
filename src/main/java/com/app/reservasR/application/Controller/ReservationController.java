@@ -21,15 +21,6 @@ public record ReservationController(ReservationService reservationService) {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
-    @GetMapping("/{idUser}")
-    public ResponseEntity<?> allReservationsByUser(@PathVariable Integer idUser) throws EntityNotFoundException {
-        reservationService.findReservationByUser(idUser);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    
-
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteReservation(@PathVariable Integer id) throws EntityNotFoundException{
         reservationService.cancelReservationById(id);
